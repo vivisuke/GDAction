@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tiles/platformPack_tile004.png" type="Texture" id=1]
 [ext_resource path="res://Tiles/platformPack_tile001.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Characters/platformChar_walk2.png" type="Texture" id=8]
 [ext_resource path="res://Characters/platformChar_walk_left1.png" type="Texture" id=9]
 [ext_resource path="res://Characters/platformChar_jump.png" type="Texture" id=10]
+[ext_resource path="res://Spider.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -108,3 +109,6 @@ animation = "jump"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0, 14.2705 )
 shape = SubResource( 5 )
+
+[node name="Spider" parent="." instance=ExtResource( 11 )]
+position = Vector2( 822.401, 481.779 )
