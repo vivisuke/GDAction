@@ -30,14 +30,14 @@ func get_input():
 		velocity.x -= walk_speed
 		$AnimatedSprite.play("left")
 	if !jumping && !walk_right && !walk_left:
-		$AnimatedSprite.play("default")
+		$AnimatedSprite.play("idle")
 
 func _physics_process(delta):
 	get_input()
 	velocity.y += gravity * delta
 	if jumping and is_on_floor() && velocity.y > 0:
 		jumping = false
-		$AnimatedSprite.play("default")
+		$AnimatedSprite.play("idle")
 		#$AnimatedSprite.play("jump")
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	#print(jumping)
