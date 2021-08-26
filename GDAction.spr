@@ -1,9 +1,13 @@
 ﻿SPR# 状 P Open Close ver     Type  概要
 -------------------------------------------------------------------------------
 0001 ◎ C 08/27 05/27 0.001│ToDo│プロジェクト新規作成
+									画面サイズ：1024x576
 0002 ◎ C 08/27 08/27 0.001│ToDo│TileMap 配置、マップ用 TileSet 設定
-0003 ● C 08/27            │ToDo│
-0004 ● C 08/27            │ToDo│
+									Cell: 64x64、
+									表面タイル：one way collision を ON に
+0003 ◎ C 08/27 08/27 0.001│ToDo│プレイヤー（KinematicBody2D）設置
+									子ノード：AnimatedSprite, CollisionShape2D
+0004 ◎ C 08/27 08/27 0.001│ToDo│Player にスクリプトアタッチ → 左右移動＆ジャンプ
 0005 ● C 08/27            │ToDo│
 0006 ● C 08/27            │ToDo│
 0007 ● C 08/27            │ToDo│
