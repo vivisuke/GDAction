@@ -111,6 +111,7 @@ script = ExtResource( 15 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 512, 0 )
 motion_scale = Vector2( 0.25, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
