@@ -21,3 +21,8 @@ func _on_Flag_body_entered(body):
 	if body == $Player:
 		$Flag/AudioStreamPlayer2D.play()
 	pass # Replace with function body.
+
+
+func _on_Spider_colliedWithPlayer():
+	$Player/AudioStreamPlayer2D.play()
+	pass # Replace with function body.
