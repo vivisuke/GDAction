@@ -14,8 +14,8 @@ var playerCollision
 
 func _ready():
 	player = get_node("/root/MainScene/Player")
-	print(player.name)
-	print(player)
+	#print(player.name)
+	#print(player)
 	pass # Replace with function body.
 
 
@@ -31,8 +31,8 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = !walk_left
 	if get_slide_count() == 2:
 		#print(get_slide_count())
-		print(get_slide_collision(0))
-		print(get_slide_collision(1))
+		#print(get_slide_collision(0))
+		#print(get_slide_collision(1))
 		if get_slide_collision(0).collider == player || get_slide_collision(1).collider == player:
-			print("collied with player")
+			#print("collied with player")
 			emit_signal("colliedWithPlayer")
