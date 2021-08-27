@@ -138,3 +138,6 @@ limit_bottom = 0
 
 [node name="Spider" parent="." instance=ExtResource( 11 )]
 position = Vector2( 822.401, 481.779 )
+
+[node name="Spider2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 628.346, 467.038 )
