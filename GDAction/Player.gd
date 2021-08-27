@@ -7,7 +7,7 @@ export (int) var gravity = 1200
 var velocity = Vector2()
 var jumping = false
 var walk_left = false
-var walk_right
+var walk_right = false
 
 func _ready():
 	pass # Replace with function body.

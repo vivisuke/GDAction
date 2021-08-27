@@ -94,7 +94,6 @@ extents = Vector2( 33.2592, 33.4831 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 512, 150 )
 motion_scale = Vector2( 0.25, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
