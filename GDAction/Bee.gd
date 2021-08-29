@@ -10,6 +10,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	if Global.paused: return
 	if position.x - player.position.x < -10:
 		#scale.x = -1
 		$AnimatedSprite.flip_h = true

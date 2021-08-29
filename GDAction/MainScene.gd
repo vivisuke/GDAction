@@ -8,12 +8,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.player = $Player
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _input(event):
+	if event is InputEventMouseButton && event.is_pressed():
+		Global.paused = !Global.paused
+	pass
 
 
 func _on_Flag_body_entered(body):
@@ -24,5 +25,15 @@ func _on_Flag_body_entered(body):
 
 
 func _on_Spider_colliedWithPlayer():
+	$Player/AudioStreamPlayer2D.play()
+	pass # Replace with function body.
+
+
+func _on_Spike_body_entered(body):
+	$Player/AudioStreamPlayer2D.play()
+	pass # Replace with function body.
+
+
+func _on_Rotator_collide_with_player():
 	$Player/AudioStreamPlayer2D.play()
 	pass # Replace with function body.

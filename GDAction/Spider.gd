@@ -20,6 +20,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	if Global.paused: return
 	velocity.y += gravity*delta
 	velocity = move_and_slide(velocity)
 	if falling && velocity.y == 0:
