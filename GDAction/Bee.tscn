@@ -16,6 +16,7 @@ animations = [ {
 extents = Vector2( 50.813, 47.2873 )
 
 [node name="Bee" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
