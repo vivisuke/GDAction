@@ -37,3 +37,9 @@ func _on_Spike_body_entered(body):
 func _on_Rotator_collide_with_player():
 	$Player/AudioStreamPlayer2D.play()
 	pass # Replace with function body.
+
+
+func _on_Coin_body_entered(body):
+	if body == Global.player:
+		$Coin.queue_free()
+	pass # Replace with function body.
