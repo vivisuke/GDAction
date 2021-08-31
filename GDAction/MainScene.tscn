@@ -171,6 +171,18 @@ motion_scale = Vector2( 0.4, 1 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 texture = ExtResource( 18 )
 
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 1024, 0 )
+texture = ExtResource( 18 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 2048, 0 )
+texture = ExtResource( 18 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 3072, 0 )
+texture = ExtResource( 18 )
+
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 1 )
 
@@ -201,7 +213,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Flag"]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
