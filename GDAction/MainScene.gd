@@ -8,6 +8,8 @@ enum {
 	TILE_COIN,
 }
 
+var spiked = false
+
 func _ready():
 	Global.player = $Player
 	pass # Replace with function body.
@@ -15,17 +17,24 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton && event.is_pressed():
 		Global.paused = !Global.paused
+	elif event is InputEventKey && Global.paused:
+		Global.paused = false
 	pass
 	
 func _physics_process(delta):
-	var plpos = $Player.position
+	var plpos = $Player.position + Vector2(0, 16)
 	var xy = $TileMap.world_to_map(plpos)
+	print(xy)
 	var item = $TileMap.get_cell(xy.x, xy.y)
 	print(item)
+	if item == TILE_SPIKE:
+		if !spiked:
+			spiked = true
+			$Player/AudioStreamPlayer2D.play()
+	else:
+		spiked = false
 	if item == TILE_COIN:
 		$TileMap.set_cell(xy.x, xy.y, TILE_NONE)
-	elif item == TILE_SPIKE:
-		$Flag/AudioStreamPlayer2D.play()
 		
 
 
