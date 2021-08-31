@@ -21,8 +21,12 @@ func _physics_process(delta):
 	var plpos = $Player.position
 	var xy = $TileMap.world_to_map(plpos)
 	var item = $TileMap.get_cell(xy.x, xy.y)
+	print(item)
 	if item == TILE_COIN:
 		$TileMap.set_cell(xy.x, xy.y, TILE_NONE)
+	elif item == TILE_SPIKE:
+		$Flag/AudioStreamPlayer2D.play()
+		
 
 
 func _on_Flag_body_entered(body):
