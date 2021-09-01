@@ -24,9 +24,9 @@ func _input(event):
 func _physics_process(delta):
 	var plpos = $Player.position + Vector2(0, 16)
 	var xy = $TileMap.world_to_map(plpos)
-	print(xy)
+	#print(xy)
 	var item = $TileMap.get_cell(xy.x, xy.y)
-	print(item)
+	#print(item)
 	if item == TILE_SPIKE:
 		if !spiked:
 			spiked = true
