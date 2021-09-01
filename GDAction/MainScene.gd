@@ -32,11 +32,12 @@ func _physics_process(delta):
 	if item == TILE_SPIKE:
 		if !spiked:
 			spiked = true
-			$Player/AudioStreamPlayer2D.play()
+			$Player/DeadAudio.play()
 	else:
 		spiked = false
 	if item == TILE_COIN:
 		$TileMap.set_cell(xy.x, xy.y, TILE_NONE)
+		$Player/GetCoinAudio.play()
 		score += 10
 		update_score_label()
 
@@ -46,22 +47,22 @@ func update_score_label():
 func _on_Flag_body_entered(body):
 	print("Flag_body_entered ", body.name)
 	if body == $Player:
-		$Flag/AudioStreamPlayer2D.play()
+		$Flag/DeadAudio.play()
 	pass # Replace with function body.
 
 
 func _on_Spider_colliedWithPlayer():
-	$Player/AudioStreamPlayer2D.play()
+	$Player/DeadAudio.play()
 	pass # Replace with function body.
 
 
 func _on_Spike_body_entered(body):
-	$Player/AudioStreamPlayer2D.play()
+	$Player/DeadAudio.play()
 	pass # Replace with function body.
 
 
 func _on_Rotator_collide_with_player():
-	$Player/AudioStreamPlayer2D.play()
+	$Player/DeadAudio.play()
 	pass # Replace with function body.
 
 

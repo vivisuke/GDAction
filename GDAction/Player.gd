@@ -52,6 +52,7 @@ func _physics_process(delta):
 		#$AnimatedSprite.play("jump")
 	#print(velocity)
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	#move_and_collide(velocity*delta)
 	#print(velocity)
 	if is_on_wall():
 		print("on_wall")
