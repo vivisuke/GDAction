@@ -9,9 +9,11 @@ enum {
 }
 
 var spiked = false
+var score = 0
 
 func _ready():
 	Global.player = $Player
+	update_score_label()
 	pass # Replace with function body.
 
 func _input(event):
@@ -35,8 +37,11 @@ func _physics_process(delta):
 		spiked = false
 	if item == TILE_COIN:
 		$TileMap.set_cell(xy.x, xy.y, TILE_NONE)
-		
+		score += 10
+		update_score_label()
 
+func update_score_label():
+	$ParallaxBackground/ParallaxLayer3/ScoreLabel.text = "%05d" % score
 
 func _on_Flag_body_entered(body):
 	print("Flag_body_entered ", body.name)

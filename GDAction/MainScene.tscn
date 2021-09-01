@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Tiles/platformPack_tile004.png" type="Texture" id=1]
 [ext_resource path="res://Tiles/platformPack_tile001.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Tiles/grassLeft.png" type="Texture" id=27]
 [ext_resource path="res://Tiles/grassRight.png" type="Texture" id=28]
 [ext_resource path="res://Lift.gd" type="Script" id=29]
+[ext_resource path="res://Lift2.gd" type="Script" id=30]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -307,7 +308,7 @@ texture = ExtResource( 18 )
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 1 )
 
-[node name="Label" type="Label" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="ScoreLabel" type="Label" parent="ParallaxBackground/ParallaxLayer3"]
 margin_left = -65.9691
 margin_top = -61.625
 margin_right = 66.0309
@@ -406,7 +407,7 @@ texture = ExtResource( 23 )
 shape = SubResource( 14 )
 
 [node name="Lift" type="StaticBody2D" parent="."]
-position = Vector2( 579.144, 308.005 )
+position = Vector2( 640, 320 )
 script = ExtResource( 29 )
 __meta__ = {
 "_edit_group_": true
@@ -423,6 +424,26 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lift"]
+shape = SubResource( 15 )
+
+[node name="Lift2" type="StaticBody2D" parent="."]
+position = Vector2( 960, 320 )
+script = ExtResource( 30 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Lift2"]
+margin_left = -64.0
+margin_top = -4.0
+margin_right = 64.0
+margin_bottom = 4.0
+color = Color( 0, 0.929412, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lift2"]
 shape = SubResource( 15 )
 
 [connection signal="body_entered" from="Flag" to="." method="_on_Flag_body_entered"]
