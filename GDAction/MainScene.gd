@@ -11,6 +11,7 @@ enum {
 var spiked = false
 var score = 0
 
+
 func _ready():
 	Global.player = $Player
 	update_score_label()

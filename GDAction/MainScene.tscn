@@ -23,7 +23,6 @@
 [ext_resource path="res://Bee.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Tiles/spikes.png" type="Texture" id=22]
 [ext_resource path="res://Tiles/transparent.png" type="Texture" id=23]
-[ext_resource path="res://Bomb.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Rotator.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Items/coinGold64.png" type="Texture" id=26]
 [ext_resource path="res://Tiles/grassLeft.png" type="Texture" id=27]
@@ -233,14 +232,14 @@ extents = Vector2( 35.207, 35.972 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "right",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
@@ -262,6 +261,9 @@ extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 64, 4 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 4, 12 )
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 15 )
@@ -295,6 +297,10 @@ motion_scale = Vector2( 0.4, 1 )
 texture = ExtResource( 18 )
 
 [node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 1024, 0 )
+texture = ExtResource( 18 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 1024, 0 )
 texture = ExtResource( 18 )
 
@@ -383,9 +389,6 @@ position = Vector2( 723.59, 187.655 )
 [node name="Bee" parent="." instance=ExtResource( 21 )]
 position = Vector2( 958.586, 74.8044 )
 
-[node name="Bomb" parent="Bee" instance=ExtResource( 24 )]
-position = Vector2( 18.6489, 59.2588 )
-
 [node name="Bee2" parent="." instance=ExtResource( 21 )]
 position = Vector2( 1275.37, 183.699 )
 
@@ -448,6 +451,44 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lift2"]
 shape = SubResource( 15 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Lift2"]
+position = Vector2( -64, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Lift2/StaticBody2D"]
+margin_left = -4.0
+margin_top = -12.0
+margin_right = 4.0
+margin_bottom = 12.0
+color = Color( 0, 0.929412, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lift2/StaticBody2D"]
+shape = SubResource( 16 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Lift2"]
+position = Vector2( 64, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Lift2/StaticBody2D2"]
+margin_left = -4.0
+margin_top = -12.0
+margin_right = 4.0
+margin_bottom = 12.0
+color = Color( 0, 0.929412, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lift2/StaticBody2D2"]
+shape = SubResource( 16 )
 
 [connection signal="body_entered" from="Flag" to="." method="_on_Flag_body_entered"]
 [connection signal="colliedWithPlayer" from="Spider" to="." method="_on_Spider_colliedWithPlayer"]
