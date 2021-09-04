@@ -28,10 +28,10 @@ func _physics_process(delta):
 		v.x = -100
 		ticks = OS.get_ticks_msec()
 	else:
-		if OS.get_ticks_msec() - ticks >= 1000:
+		if OS.get_ticks_msec() - ticks >= 1500:
 			ticks = OS.get_ticks_msec()
 			var bomb = Bomb.instance()
-			bomb.position = position
+			bomb.position = position + Vector2(0, 32)
 			main.add_child(bomb)
 		return
 	move_and_collide(v*delta)

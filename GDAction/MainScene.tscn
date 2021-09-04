@@ -389,9 +389,6 @@ position = Vector2( 723.59, 187.655 )
 [node name="Bee" parent="." instance=ExtResource( 21 )]
 position = Vector2( 958.586, 74.8044 )
 
-[node name="Bee2" parent="." instance=ExtResource( 21 )]
-position = Vector2( 1275.37, 183.699 )
-
 [node name="Rotator" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1344, 384 )
 
