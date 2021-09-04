@@ -14,5 +14,6 @@ func _on_Timer_timeout():
 	bp.position = position
 	main.add_child(bp)
 	bp.get_node("CPUParticles2D").restart()
+	bp.get_node("BombAudio").play()
 	queue_free()
 	pass # Replace with function body.
